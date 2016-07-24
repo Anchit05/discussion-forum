@@ -31,7 +31,7 @@ forumApp
         this.generateRendomPic = function () {
             var imgUri = "https://unsplash.it/300/300?image=",
                 randomNum = Math.floor((Math.random() * 100) + 1);
-                if (randomNum === 86) { randomNum = 101; } // image was not available for this id
+                if (randomNum === 86 || randomNum === 97) { randomNum = 101; } // image was not available for this id
             return imgUri + randomNum;
         };
     })
