@@ -1,0 +1,46 @@
+<section class="discussion-details">
+	<div class="inner-content">
+		<div class="inner-container animated bounceInDown">
+			<div class="discuss-title row">
+				<div class="col-md-1">
+					<img class="profile-image" ng-src="{{topicDetails.userImgUri}}">
+				</div>
+				<div class="col-md-11">
+					<p class="">{{topicDetails.title}}</p>
+					<p><b>{{topicDetails.user}}</b></p>
+					<p>{{topicDetails.date}}</p>
+				</div>
+			</div>
+			<div class="discuss-info row">
+				<div class="col-md-12">
+					<span>{{topicDetails.description}}</span>
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-primary comment-button animated fadeIn" ng-if="!mockData" ng-click="showModalFun()">Add comments</button>
+		<div class="comment-section">
+			<div class="inner-container comment-container animated bounceInUp" ng-repeat="comments in topicDetails.comment">
+				<div class="row">
+					<div class="col-md-1 profile-section">
+						<img class="profile-image" ng-src="{{comments.userImgUri}}">
+					</div>
+					<div class="col-md-10 comment-info">
+						<p><b>{{comments.user}}</b></p>
+						<p><b>{{comments.commentDate}}</b></p>
+						<p>{{comments.comment}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<forum-modal visible="showModal" on-shown="modalOneShown()" on-hide="modalOneHide()">
+			<forum-modal-header title="Add Comments"></forum-modal-header>
+			<forum-modal-body>
+				<p class="comment-user">User: <span>{{showUser}}</span></p>
+				<textarea ng-model="userComment.comment" class="comment-area"></textarea>
+			</forum-modal-body>
+			<forum-modal-footer>
+				<button class="btn btn-primary"  ng-click="postComment()">Post</button>
+			</forum-modal-footer>
+		</forum-modal>
+	</div>
+</section>

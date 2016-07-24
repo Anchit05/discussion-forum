@@ -1,0 +1,32 @@
+<section class="dashboard-table">
+	<div class="table-content animated zoomIn">
+		<div class="table-heading">
+			<span>Members of our Clan!</span>
+		</div>
+		<table class="table table-hover topic-table">
+			<thead class="table-header">
+				<tr>
+					<th>No:</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Date of Joining</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(key, value) in clanMembersData" ng-if="key!=='undefined'">
+					<th scope="row">{{$index+1}}</th>
+					<td class="user-info">
+						<img ng-if="value.imgUri" ng-src="{{value.imgUri}}">
+						<img ng-if="!value.imgUri" src="img/user.png">
+						<span>{{value.name}}</span>
+					</td>
+					<td>{{value.email}}</td>
+					<td>{{value.registrationTime | date:'medium'}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<span class="validation-message" ng-if="showError">
+			<span>{{showError}}</span>
+		</span>
+	</div>
+</section>

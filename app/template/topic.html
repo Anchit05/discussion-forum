@@ -1,0 +1,28 @@
+<form role="form" class="forum-container">
+	<div class="inner-content">
+		<div class="row main-form animated bounce">
+			<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 forum-box-content">
+				<p>
+					<span class="animated bounceIn success-message" ng-if="submitMessage" >
+						Topic Submitted Successfully!
+					</span>
+				</p>
+				<h2>Topic</h2>
+				<div class="form-group">
+					<label for="name">Title:</label>
+					<input type="text" class="form-control" id="title" ng-model="discussion.title" placeholder="Enter Title">
+				</div>
+				<div class="form-group">
+					<label for="topic_description">Description:</label>
+					<textarea id="topic_description" ng-model="discussion.description" placeholder = "Enter Description"></textarea>
+				</div>
+				<p class="validation-message">
+					<span class="animated bounceIn" ng-if="showValidate">
+						Please enter title and description!
+					</span>
+				</p>
+				<button type="submit" class="btn btn-primary" ng-click = "submitTopic()">Submit</button>
+			</div>
+		</div>
+	</div>
+</form>
