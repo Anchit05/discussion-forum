@@ -2,7 +2,8 @@
 
 forumApp
     .controller("MainController", function ($scope, ForumServices, $location, $route) {
-    	$scope.currUsrActive = false;
+    	// This controller handles the checking of logout and register of user
+        $scope.currUsrActive = false;
         $scope.$route = $route;
         function init() {
             $scope.currentUser = ForumServices.getData("currentUser") || {};

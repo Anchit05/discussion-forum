@@ -8,7 +8,7 @@ forumApp
 	$scope.showMessage = false;
 	$scope.mockData = false;
 	var currentUser;
-	
+	// This is to check whether we are in main dashboard page or in the topic details page
 	if ($routeParams.params) {
 		$scope.userComment = {};
 		param = $routeParams.params.split(":");
@@ -25,7 +25,7 @@ forumApp
 		}
 		
 		$scope.showModal = false;
-	    
+	    // This function handles the posting of comments 
 	    $scope.postComment = function () {
 	    	var date = new Date();
 	    	date = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
@@ -51,7 +51,7 @@ forumApp
 	        }
 	   	};
 	}
-
+	// This handles whether to show mockdata or not
 	if (!discussionData) {
 		MockData.get().then(function (data) {
 			$scope.discussionTopics = data.data;
@@ -61,6 +61,5 @@ forumApp
 	}
 
 	$scope.discussionTopics = discussionData;
-	console.log("discussionTopics: ",$scope.discussionTopics);
 	
 });

@@ -6,10 +6,11 @@ forumApp
    		$scope.showError = false;
    		var param,
    			allUserObj = {};
-
+// using these params we are hiding/showing require fields as I am using sme template for register and login
    		param = $routeParams.params.split(":");
    		$scope.signMode = param[1];
 
+// validation of register and login form
          function validation(data, type) {
             if (type === "register") {
                return (data.email && data.name && data.password);
@@ -18,6 +19,7 @@ forumApp
             }
          } 
 
+//This function handles the login and register part of the project and the data is being stored in localstorage
    		$scope.saveUser = function() {
             $scope.showError = false;
    			allUserObj = ForumServices.getData("users") || {};

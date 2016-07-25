@@ -2,7 +2,7 @@
 
 forumApp
 .controller("TopicController", function ($scope, ForumServices, $location, $route) {
-
+	// This controller handles the creation of topics
 	$scope.discussion = {};
 	$scope.showValidate = false;
 	$scope.submitMessage = false;

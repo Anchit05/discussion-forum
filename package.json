@@ -39,7 +39,8 @@
     "jshint-stylish": "^0.2.0",
     "main-bower-files": "^2.13.1",
     "merge-stream": "^0.1.8",
-    "wiredep": "^1.8.6"
+    "wiredep": "^1.8.6",
+    "gulp-sourcemaps": "~1.6.0"
   },
   "engines": {
     "node": ">=0.10.0"
